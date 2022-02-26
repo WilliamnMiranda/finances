@@ -1,5 +1,5 @@
 const axios = require("axios")
 
-const Api = axios.create({baseURL:"https://git.heroku.com/api-project-finances.git"})
+const Api = axios.create({baseURL:"http://localhost:3001"})
 
 export default Api
