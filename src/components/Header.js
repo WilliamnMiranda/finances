@@ -1,6 +1,7 @@
 
 import React from 'react';
 import {Menu,HeaderComponent,ContainerHeader,Logotipo,ListaMenu,ItemMenu,MenuHamburguer} from '../styles/Header';
+import {BsList} from "react-icons/bs"
 import { Link , useLocation} from "react-router-dom";
 
 const Header = () => {
@@ -26,7 +27,7 @@ React.useEffect(()=>{
                     </ItemMenu>
                   </ListaMenu>
 
-                  <MenuHamburguer onClick = {()=> setStatus(!status)}> - </MenuHamburguer>
+                  <MenuHamburguer onClick = {()=> setStatus(!status)}> <BsList/> </MenuHamburguer>
               </Menu>
           </ContainerHeader> 
       </HeaderComponent>

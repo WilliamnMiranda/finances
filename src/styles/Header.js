@@ -2,8 +2,9 @@ import styled from "styled-components";
 
 export const MenuHamburguer = styled.div`
     display: none;
-    @media(max-width: 800px){
+    @media(max-width: 1335px){
         display: block;
+        font-size: 2.1em;
     }
 `
 export const HeaderComponent = styled.header`
@@ -34,7 +35,7 @@ display: flex;
 export const ListaMenu = styled.ul`
 display:flex; 
 gap :30px;
-@media(max-width: 800px){
+@media(max-width: 1335px){
     background-color: black;
     display: ${({status}) => status ? "flex" : "none"};
     top:70px;
@@ -50,7 +51,7 @@ gap :30px;
 export const ItemMenu= styled.li`
 font-size:1.2em; 
 font-weight:600;
-@media(max-width: 800px){
+@media(max-width: 1335px){
     display: flex;
     align-items: center;
     justify-content: center;

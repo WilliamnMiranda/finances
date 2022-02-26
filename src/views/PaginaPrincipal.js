@@ -98,8 +98,8 @@ const PaginaPrincipal = () => {
         <ContainerFinnalyInfos>
           <h1>Saidas</h1>
           {
-           randomDespesa && randomDespesa.map((item)=>{
-             return <ItemFinally item = {item}/>
+           randomDespesa && randomDespesa.map((item,index)=>{
+             return <ItemFinally key = {index} item = {item}/>
             })
           }
           <ButtonRedirect color = {"#00FA9A"} onClick = {()=>navigate("/despesas")}>Ver Mais</ButtonRedirect>
@@ -108,8 +108,8 @@ const PaginaPrincipal = () => {
         <ContainerFinnalyInfos>
         <h1>Entradas</h1>
           {
-           randomEntradas && randomEntradas.map((item)=>{
-             return <ItemFinally item = {item}/>
+           randomEntradas && randomEntradas.map((item,index)=>{
+             return <ItemFinally key = {index} item = {item}/>
             })
           }
           <ButtonRedirect color = {"#CD5C5C"} onClick = {()=>navigate("/entradas")}>ver mais</ButtonRedirect>

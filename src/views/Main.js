@@ -5,7 +5,6 @@ import Login from '../views/Login'
 import  {GlobalContext} from '../hooks/userProvider'
 const Main = () => {
     const {logado,setLogado} = React.useContext(GlobalContext)
-    console.log(logado)
     return (
       <BrowserRouter>
             {logado ? <Logado/>:<Login/>}

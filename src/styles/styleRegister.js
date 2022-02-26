@@ -6,7 +6,7 @@ export const ContainerGeral = styled.div`
     display: flex;
     align-items: center;
     justify-content:center;
-    @media(max-width: 800px){
+    @media(max-width: 1335px){
         display: block;
     }
 `
@@ -20,7 +20,7 @@ export const ContainerLogin = styled.section`
     flex-direction: column;
     background-color:rgba(0,0,0,0.3);
     padding-bottom:20px;
-    @media(max-width: 800px){
+    @media(max-width: 1335px){
         width: 100%;
         height: 100%;
     }
@@ -28,13 +28,18 @@ export const ContainerLogin = styled.section`
     `
 
 export const FotoLogin = styled.div`
-    background-color:green;
-    width: 130px;
-    height: 130px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size:5.0em;
+    background-color:#836FFF;
+    width: 110px;
+    height: 110px;
+    color:black;
     border-radius:50%;
     position:absolute;
     top:220px;
-    @media(max-width: 800px){
+    @media(max-width: 1335px){
         top:15px;
         width: 130px;
         height: 130px;
@@ -49,7 +54,7 @@ flex-direction:column;
 width: 100%;
 margin-top:100px;
 background-color:inherit;
-@media(max-width: 800px){
+@media(max-width: 1335px){
         margin-top : 180px;
     }
 `
@@ -65,7 +70,7 @@ export const ButtonSubmit = styled.button`
     width: 90%;
     height: 50px;
     font-size:1.2em;
-    background-color:grey;
+    background-color:#836FFF;
     margin-top:30px;
     color:white;
 `
@@ -93,7 +98,7 @@ export const ContainerFormularioLogin = styled.div`
     width: 100%;
     margin-top:100px;
     background-color:inherit;
-    @media(max-width: 800px){
+    @media(max-width: 1335px){
             margin-top : 180px;
     }
 `
