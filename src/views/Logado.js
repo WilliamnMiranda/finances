@@ -1,5 +1,4 @@
 import Header from "../components/Header";
-import { GlobalStorage } from "../hooks/userProvider";
 import PaginaPrincipal from '../views/PaginaPrincipal'
 import Despesas from '../views/Despesas'
 import Metas from '../views/Metas'
@@ -15,7 +14,6 @@ const Logado = () => {
   return (
     <>
     <GlobalStyle/>
-    <GlobalStorage>
       <Header/>
         <Routes>
             <Route path="/" element={<PaginaPrincipal/>}/>
@@ -23,7 +21,6 @@ const Logado = () => {
             <Route path="/metas" element={<Metas/>}/>
             <Route path="/transacoes" element={<Transacoes/>}/>
         </Routes>
-    </GlobalStorage>
   </>  )
 }
 

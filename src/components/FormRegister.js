@@ -3,7 +3,9 @@ import useFormRegister from '../hooks/useFormRegister';
 import {ContainerFormulario,InputCreateAccount,ButtonSubmit,ContainerPaginaOffline,ButtonLogin,FooterBack} from '../styles/styleRegister'
 import UsersService from '../services/users'
 import getRandom from '../services/newId';
+import { GlobalContext } from '../hooks/userProvider';
 const FormRegister = () => {
+    const {logado,setLogado} = React.useContext(GlobalContext)
     let name = useFormRegister();
     let email = useFormRegister();
     let password = useFormRegister();
@@ -21,6 +23,8 @@ const FormRegister = () => {
             }
             try{
                 const user = await UsersService.register(dados)
+                localStorage.setItem("user",dados.id)
+                setLogado(true)
             }catch(error){
             }
     }
@@ -34,7 +38,7 @@ const FormRegister = () => {
         try { 
             const user = await UsersService.login(dados)
             localStorage.setItem("user",user.id)
-            
+            setLogado(true)
         }catch{}
     }
 

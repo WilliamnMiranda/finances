@@ -1,13 +1,23 @@
-import React from "react";
-import userEntradas from '../services/entradas'
-import userDespesas from '../services/despesa'
+import React from "react"
+
 export const GlobalContext = React.createContext()
 
 export const GlobalStorage = ({children}) => {
-    const [totalDespesas,setTotalDespesas] = React.useState("")
-    const [totalEntradas,setTotalEntradas] = React.useState(0)
-    const id = localStorage.getItem("user")
+
+    const [logado,setLogado]  = React.useState(null);
+
+    React.useEffect(()=>{
+        const user = localStorage.getItem("user")
+            if(user){
+                setLogado(true)
+            }
+            else{
+                setLogado(false)
+            }
+    },[])
     return (
-        <GlobalContext.Provider value = {{totalDespesas,totalEntradas}}>{children} </GlobalContext.Provider>
+        <GlobalContext.Provider value={{logado,setLogado}}>
+            {children} 
+        </GlobalContext.Provider>
     )
 }

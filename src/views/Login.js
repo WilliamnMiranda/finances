@@ -2,7 +2,7 @@ import React from 'react'
 import FormRegister from '../components/FormRegister';
 import GlobalStyle from "../styles/globalStyle";
 import {ContainerGeral,ContainerLogin,FotoLogin}from '../styles/styleRegister'
-const Login = ({setLogado}) => {
+const Login = () => {
   
   return (
       <>
@@ -10,7 +10,7 @@ const Login = ({setLogado}) => {
         <ContainerGeral>
             <ContainerLogin>
                 <FotoLogin></FotoLogin>
-                    <FormRegister setLogado = {setLogado}/>
+                    <FormRegister/>
             </ContainerLogin>
         </ContainerGeral>
       </>

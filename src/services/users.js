@@ -1,4 +1,5 @@
 import Api from '../services/Api'
+import { GlobalContext } from '../hooks/userProvider';
 const userServices = {
     register : (params) => {
         Api.post('/users/register',params)
