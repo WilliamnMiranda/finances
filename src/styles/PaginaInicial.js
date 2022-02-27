@@ -10,14 +10,15 @@ export  const ContainerPaginaInicial = styled.main`
 `
 
 export  const ContainerInfosGerais = styled.main`
+    gap:20px;
     width: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
+    margin-bottom: 20px;
     margin-top:30px;
-    gap:20px;
     @media(max-width: 800px){
-        gap:20px;
+        gap:0px;
         flex-direction: column;
     }
 `
@@ -30,6 +31,7 @@ export  const InfoTotais = styled.article`
     height: 170px;
     padding:20px;
     @media(max-width: 800px){
+        margin-bottom:25px;
         width: 100%;
         height: 100px;
     }
@@ -55,7 +57,21 @@ export  const ContainerFinnalyInfos= styled.nav`
     flex-direction: column;
     position: relative;
     @media(max-width: 800px){
+        gap:0px;
         width: 100%;
+
+        & h1 {
+            padding:5px;
+        }
+    }
+    & li{
+        margin-bottom: 0px;
+
+        @media(max-width: 800px){
+            gap:0px;
+            margin-bottom:10px;
+        }
+
     }
 `
 export  const ContainerOutrasInfos = styled.article``
@@ -98,8 +114,7 @@ export const ContainerItemFinally= styled.li`
         font-weight: 400;
         height: 30px;
         display: flex;
-        align-items: center;
-        
+        align-items: center; 
     }
 `
 

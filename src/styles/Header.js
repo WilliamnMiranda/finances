@@ -8,7 +8,8 @@ export const MenuHamburguer = styled.div`
     }
 `
 export const HeaderComponent = styled.header`
-display:flex;align-items: center;
+display:flex;
+align-items: center;
 justify-content: center;
 height: 70px;
 border-bottom: 1px solid rgba(234,234,234,0.2);
@@ -34,7 +35,9 @@ display: flex;
 
 export const ListaMenu = styled.ul`
 display:flex; 
+gap:30px;
 @media(max-width: 1335px){
+    gap:0px;
     background-color: black;
     display: ${({status}) => status ? "flex" : "none"};
     top:70px;
