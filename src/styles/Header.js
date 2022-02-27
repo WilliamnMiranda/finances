@@ -52,6 +52,7 @@ export const ItemMenu= styled.li`
 font-size:1.2em; 
 font-weight:600;
 @media(max-width: 1335px){
+    -webkit-margin-bottom:30px;
     display: flex;
     align-items: center;
     justify-content: center;
