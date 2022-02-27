@@ -34,7 +34,6 @@ display: flex;
 
 export const ListaMenu = styled.ul`
 display:flex; 
-gap :30px;
 @media(max-width: 1335px){
     background-color: black;
     display: ${({status}) => status ? "flex" : "none"};
@@ -43,7 +42,6 @@ gap :30px;
     position: absolute;
     width: 100%;
     flex-direction:column;
-    gap:20px;
     padding:25px 0px;
 }
 `
@@ -52,11 +50,11 @@ export const ItemMenu= styled.li`
 font-size:1.2em; 
 font-weight:600;
 @media(max-width: 1335px){
-    -webkit-margin-bottom:30px;
     display: flex;
     align-items: center;
     justify-content: center;
     width: 100%;
+    margin-bottom: 20px;
     background-color:#1C1C1C;
     height: 40px;
 }
