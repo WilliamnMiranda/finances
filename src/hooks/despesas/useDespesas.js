@@ -18,7 +18,7 @@ const useDespesas = () => {
 }
   React.useEffect(()=>{fetch()},[])
 
-  const Add = async () => {
+  const Add = async function () {
     const userDespesa = localStorage.getItem("user")
     const dados = {
         name : nameDespesa.value,
