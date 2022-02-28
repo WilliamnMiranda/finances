@@ -3,7 +3,7 @@ import {ContainerInfos, ContainerFormulario,InputName,InputPrice,ButtonDespesas,
 import ItemList from '../components/ItemList'
 import useTransacoes from '../hooks/transacoes/useTransacoes';
 const Transacoes = () => {
-  let {nameEntrada,valueEntrada,Add,fetch,dadosDespesas,Remove} = useTransacoes()
+  let {nameEntrada,valueEntrada,Add,dadosDespesas,Remove} = useTransacoes()
 
   return (
     <ContainerInfos>

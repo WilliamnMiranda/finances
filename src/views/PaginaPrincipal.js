@@ -10,11 +10,13 @@ import { useNavigate } from 'react-router-dom';
 const PaginaPrincipal = () => {
   const navigate = useNavigate()
   const id = localStorage.getItem("user")
-  let [valueDespesa,setDespesas] = React.useState();
-  let [valueEntradas,setEntradas] = React.useState();
-  let [valueMetas,setMetas] = React.useState()
+  let [valueDespesa,setDespesas] = React.useState(null);
+  let [valueEntradas,setEntradas] = React.useState(null);
+  let [valueMetas,setMetas] = React.useState(null)
+  let [valueCarteira,setCarteira] = React.useState(null)
   let [randomDespesa,setRandomDespesas] = React.useState([]);
   let [randomEntradas,setRandomEntradas] = React.useState([]);
+
 
   async function getTotalMetas(){
     const metasTotal = await userControlMetas.findTotalMetas(id)
@@ -36,8 +38,6 @@ const PaginaPrincipal = () => {
     setRandomEntradas(entradas)
   }
   
-
-
   React.useEffect(()=>{
     getTotalDespesas()
     getTotalEntradas()
@@ -54,7 +54,7 @@ const PaginaPrincipal = () => {
             </ContainerType>
 
             <ContainerValue>
-                <div>R$ <span>{valueEntradas && valueEntradas}</span></div>
+                <div>R$ {valueEntradas == null && "  0"} {valueEntradas && valueEntradas} </div>
             </ContainerValue>
         </InfoTotais>
 
@@ -65,7 +65,7 @@ const PaginaPrincipal = () => {
             </ContainerType>
 
             <ContainerValue>
-                <div>R$ <span>{valueDespesa && valueDespesa}</span></div>
+                <div>R$ {valueDespesa == null && "  0"} {valueDespesa && valueDespesa}</div>
             </ContainerValue>
         </InfoTotais>
 
@@ -76,7 +76,7 @@ const PaginaPrincipal = () => {
             </ContainerType>
 
             <ContainerValue>
-                <div>R$ <span></span></div>
+                <div>R$ {valueCarteira== null && "  0"} {valueCarteira && valueCarteira}</div>
             </ContainerValue>
         </InfoTotais>
 
@@ -87,7 +87,7 @@ const PaginaPrincipal = () => {
             </ContainerType>
 
             <ContainerValue>
-                <div>R$ <span>{valueMetas && valueMetas}</span></div>
+                <div>R${valueMetas == null && "  0"} {valueMetas && valueMetas}</div>
             </ContainerValue>
         </InfoTotais>
 
@@ -99,20 +99,20 @@ const PaginaPrincipal = () => {
           <h1>Saidas</h1>
           {
            randomDespesa && randomDespesa.map((item,index)=>{
-             return <ItemFinally key = {index} item = {item}/>
+             return <ItemFinally type = {1} key = {index} item = {item}/>
             })
           }
-          <ButtonRedirect color = {"#00FA9A"} onClick = {()=>navigate("/despesas")}>Ver Mais</ButtonRedirect>
+          <ButtonRedirect color = {"#CD5C5C"} onClick = {()=>navigate("/despesas")}>Ver Mais</ButtonRedirect>
         </ContainerFinnalyInfos>
         
         <ContainerFinnalyInfos>
         <h1>Entradas</h1>
           {
            randomEntradas && randomEntradas.map((item,index)=>{
-             return <ItemFinally key = {index} item = {item}/>
+             return <ItemFinally type = {0} key = {index} item = {item}/>
             })
           }
-          <ButtonRedirect color = {"#CD5C5C"} onClick = {()=>navigate("/entradas")}>ver mais</ButtonRedirect>
+          <ButtonRedirect color = {"#00FA9A"} onClick = {()=>navigate("/entradas")}>ver mais</ButtonRedirect>
         </ContainerFinnalyInfos>
       </ContainerUltimasTransacoes>
 

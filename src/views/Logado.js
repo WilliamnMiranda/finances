@@ -19,7 +19,7 @@ const Logado = () => {
             <Route path="/" element={<PaginaPrincipal/>}/>
             <Route path="/despesas" element={<Despesas/>}/>
             <Route path="/metas" element={<Metas/>}/>
-            <Route path="/transacoes" element={<Transacoes/>}/>
+            <Route path="/entradas" element={<Transacoes/>}/>
         </Routes>
   </>  )
 }

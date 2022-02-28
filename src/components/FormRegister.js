@@ -57,7 +57,7 @@ const FormRegister = () => {
                         <InputCreateAccount value = {email.value} type="Email" name = "email" placeholder="Email" onChange = {({target}) => email.setValues(target.value)} />
                         <InputCreateAccount value = {password.value} type="password" name = "senha" placeholder="Password" onChange = {({target}) => password.setValues(target.value)} />
                         <ButtonSubmit>Registrar</ButtonSubmit>
-                </ContainerFormulario>)}
+            </ContainerFormulario>)}
 
                 {login && (<ContainerFormulario onSubmit={Login}>
                         <h1>Login</h1>

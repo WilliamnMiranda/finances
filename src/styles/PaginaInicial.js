@@ -117,15 +117,34 @@ export const ContainerItemFinally= styled.li`
         align-items: center; 
     }
 `
+export const IconType = styled.div`
+display: flex;
+align-items: center;
+justify-content: center;
+color: ${({type}) => type ? "#ff0000" : "#228b22"};
+width: 3%;
+& div {
+    font-size: 1.4em;
+}
+@media(max-width: 800px){
+    margin-right: 7px;
+    & div {
+        font-size: 1.2em;
+    }
+}
+`
 
 export const NameDespesa = styled.div`
-    width: 40%;
+    width: 45%;
+    @media(max-width: 800px){
+        width: 43%;
+    }
 `
 export const ValueDespesa = styled.div`
     width:25%;
 `
 export const CreationDate = styled.div`
-    width: 25%;
+    width: 27%;
 `
 
 export const ContainerValue = styled.div`

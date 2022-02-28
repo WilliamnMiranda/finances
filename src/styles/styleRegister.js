@@ -55,7 +55,15 @@ width: 100%;
 margin-top:100px;
 background-color:inherit;
 @media(max-width: 1335px){
+        gap:0px;
         margin-top : 180px;
+        & h1 {
+            margin-bottom: 10px;
+        }
+        & input {
+            gap :0px;
+            margin-bottom: 15px;
+        }
     }
 `
 
