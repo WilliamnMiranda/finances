@@ -35,6 +35,13 @@ export const ContainerFormulario = styled.form`
             width: 100%;
             
         }
+
+        & button {
+            margin-top: 5px;
+            background-color: black;
+            color:white;
+            height: 40px;
+        }
 }
 `
 export const InputName = styled.input``
