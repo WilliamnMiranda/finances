@@ -71,6 +71,8 @@ export const ButtonSubmit = styled.button`
     height: 50px;
     font-size:1.2em;
     background-color:#836FFF;
+    border: none;
+    outline: none;
     margin-top:30px;
     color:white;
 `

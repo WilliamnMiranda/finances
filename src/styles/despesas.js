@@ -17,22 +17,24 @@ export const ContainerFormulario = styled.form`
     display: flex;
     align-items: center;
     gap:20px;
-    & input {
-    padding:5px;
-    height: 25px;
-    border-radius: 30px;
-    outline: none;
-    border: none;
-    width: 40%;
-    }
-    @media(max-width: 800px){
-    width: 100%;
-    flex-direction: column;
-    height: auto;
-
-    & input {
+        & input {
+            padding:5px;
+            height: 25px;
+            border-radius: 30px;
+            outline: none;
+            border: none;
+            width: 40%;
+        }
+        @media(max-width: 800px){
         width: 100%;
-    }
+        flex-direction: column;
+        height: auto;
+        gap:0px;
+        & input {
+            margin-bottom: 20px;
+            width: 100%;
+            
+        }
 }
 `
 export const InputName = styled.input``
@@ -59,6 +61,14 @@ export const ContainerLista = styled.nav`
     display: flex;
     flex-direction: column;
     gap:10px;
+    @media(max-width: 800px){
+        gap:0px;
+
+        & li {
+            margin-bottom: 10px;
+        }
+    }
+
 `
 
 export const ItemDespesa = styled.li`

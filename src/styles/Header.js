@@ -35,6 +35,7 @@ display: flex;
 
 export const ListaMenu = styled.ul`
 display:flex; 
+align-items: center;
 gap:30px;
 @media(max-width: 1335px){
     gap:0px;
@@ -60,5 +61,16 @@ font-weight:600;
     margin-bottom: 20px;
     background-color:#1C1C1C;
     height: 40px;
+}
+`
+
+export const ButtonLogout  = styled.button`
+    background-color:#40C1F5;;
+    width: 100px;
+    outline: none;
+    border: none;
+    padding:10px;
+    @media(max-width: 1335px){
+    width: 100%;
 }
 `

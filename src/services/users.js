@@ -1,8 +1,8 @@
 import Api from '../services/Api'
 import { GlobalContext } from '../hooks/userProvider';
 const userServices = {
-    register : (params) => {
-        Api.post('/users/register',params)
+    register : async (params) => {
+       await Api.post('/users/register',params)
     },
     login : async ({email,password}) => {
         const {data} =  await Api.get("/users/login")
