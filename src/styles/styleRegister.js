@@ -40,7 +40,7 @@ export const FotoLogin = styled.div`
     position:absolute;
     top:220px;
     @media(max-width: 1335px){
-        top:15px;
+        top:65px;
         width: 130px;
         height: 130px;
     }
