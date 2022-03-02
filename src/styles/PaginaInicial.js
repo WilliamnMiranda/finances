@@ -17,7 +17,8 @@ export  const ContainerInfosGerais = styled.main`
     justify-content: center;
     margin-bottom: 20px;
     margin-top:30px;
-    @media(max-width: 800px){
+    @media(max-width: 1200px){
+        padding: 10px;
         gap:0px;
         flex-direction: column;
     }
@@ -30,7 +31,7 @@ export  const InfoTotais = styled.article`
     width: 23%;
     height: 170px;
     padding:20px;
-    @media(max-width: 800px){
+    @media(max-width: 1200px){
         margin-bottom:25px;
         width: 100%;
         height: 100px;

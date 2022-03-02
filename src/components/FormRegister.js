@@ -46,8 +46,7 @@ const FormRegister = () => {
         setRegister(!register)
         setLogin(!login)
     }
-    
-   
+
     return (
           <>
             <ContainerPaginaOffline>

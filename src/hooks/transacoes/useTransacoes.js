@@ -6,6 +6,10 @@ const useTransacoes = () => {
     let valueEntrada = useFormRegister();
     let [dadosDespesas,setDadosDespesas] = React.useState([])
     const id = localStorage.getItem("user")
+    let editNameEntrada = useFormRegister();
+    let editValueEntrada = useFormRegister()
+    let [valueIdEntrada,setIdEntrada] = React.useState()
+    let [modal,setModal] = React.useState(false)
   
     async function fetch(){
       const dados = await userControlEntradas.findEntradas(id)
@@ -36,8 +40,28 @@ const useTransacoes = () => {
         fetch()
     }catch(error){}
  }
+
+ const getIdItem = (despesa) =>{
+    setModal(true)
+    setIdEntrada(despesa._id)
+  }
   
-    return {nameEntrada,valueEntrada,Add,fetch,dadosDespesas,Remove}
+  const EditSubmit = async () =>{
+    const dados = {
+      name : editNameEntrada.value,
+      value : editValueEntrada.value,
+    }
+    if(editNameEntrada.value != "" && editValueEntrada.value != ""){
+      try{
+        const entrada = await userControlEntradas.put(valueIdEntrada,dados)
+      }catch(error){console.log("erro")}
+    }else{
+      alert("preencha os dados")
+    }
+   
+  }
+  
+    return {nameEntrada,valueEntrada,Add,fetch,dadosDespesas,Remove,editNameEntrada,editValueEntrada,getIdItem,EditSubmit,modal,setModal}
 }
 
 export default useTransacoes

@@ -85,6 +85,7 @@ export const ItemDespesa = styled.li`
     width: 90%;
     height: 60px;
     background-color:rgba(0,0,0,0.7);
+    font-size:1.2em;
     padding: 10px;
     border-radius: 15px;
     gap:20px;
@@ -99,19 +100,23 @@ export const ItemDespesa = styled.li`
     @media(max-width: 800px){
         width: 95%;
         gap:5px;
+        font-size: 1.0em;
 }
 `
 
 export const NameDespesa = styled.div`
     overflow: hidden;
     text-overflow: ellipsis;
-    width: 35%;
+    width: 30%;
     @media(max-width: 800px){
         font-size: 0.9em;
 }
 `
 export const ValueDespesa = styled.div`
-    width:15%;
+    width:12%;
+    @media(max-width: 800px){
+        width: 25%;
+}
 `
 export const CreationDate = styled.div`
     width: 10%;
@@ -160,3 +165,67 @@ export const ButtonMobile= styled.button`
         justify-content: center;
     }
 `
+export const Closed = styled.div`
+    background-color: transparent;
+    font-size: 1.9em;
+    & div{
+        cursor: pointer;
+    }
+`
+export const HeaderClose= styled.div`
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+`
+export const IconTypeList = styled.div`
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: ${({type}) => type ? "#ff0000" : "#228b22"};
+    width: 3%;
+
+    & div {
+        font-size: 1.4em;
+    }
+
+    @media(max-width: 800px){
+        margin-right: 7px;
+        & div { font-size: 1.2em;}
+    }
+`
+
+
+
+export const ContainerEdit = styled.section`
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: transparent;
+    width: 100%;
+    height: calc(100% - 70px);
+    & form {
+        display: flex;
+        flex-direction: column;
+        background-color: black;
+        width: 400px;
+        padding:25px;
+        border-radius: 20px;
+    }
+    & input {
+            padding:5px;
+            height: 25px;
+            border-radius: 30px;
+            outline: none;
+            border: none;
+            width: 100%;
+            margin-bottom:20px;
+    }
+
+    & button {
+        width: 100%;
+    }
+`
+
+export const ContainerFormularioEdit = styled.form``

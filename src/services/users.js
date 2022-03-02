@@ -1,5 +1,4 @@
 import Api from '../services/Api'
-import { GlobalContext } from '../hooks/userProvider';
 const userServices = {
     register : async (params) => {
        await Api.post('/users/register',params)

@@ -19,6 +19,10 @@ const userControlDespesa = {
     },
     remove : async (id) =>{
        await Api.delete(`/despesas/${id}`)
+    },
+    put : async (idDespesa,dados) =>{
+        const newDespesa = await Api.put(`/despesas/${idDespesa}`,dados)
+        return newDespesa
     }
 }
 
