@@ -13,6 +13,9 @@ const FormRegister = () => {
     let passwordLogin = useFormRegister()
     let [login,setLogin] = React.useState(false)
     let [register,setRegister] = React.useState(true)
+    let [error,setError] = React.useState(false)
+    let [errorCadastro,setErrorCadastro] = React.useState(false)
+
     const Register = async (event) => {
             event.preventDefault()
             const dados = {
@@ -26,6 +29,7 @@ const FormRegister = () => {
                 localStorage.setItem("user",dados.id)
                 setLogado(true)
             }catch(error){
+                setErrorCadastro(true)
             }
     }
 
@@ -39,8 +43,15 @@ const FormRegister = () => {
             const user = await UsersService.login(dados)
             localStorage.setItem("user",user.id)
             setLogado(true)
-        }catch{}
+        }catch{setError(true)}
     }
+
+    React.useEffect(()=>{
+        setTimeout(()=>{
+            setError(false)
+            setErrorCadastro(false)
+        },5000)
+    },[error,errorCadastro])
 
     function alter (){
         setRegister(!register)
@@ -55,6 +66,7 @@ const FormRegister = () => {
                         <InputCreateAccount value = {name.value} type="text" name = "nome" placeholder="Name" onChange = {({target}) => name.setValues(target.value)} />
                         <InputCreateAccount value = {email.value} type="Email" name = "email" placeholder="Email" onChange = {({target}) => email.setValues(target.value)} />
                         <InputCreateAccount value = {password.value} type="password" name = "senha" placeholder="Password" onChange = {({target}) => password.setValues(target.value)} />
+                        {errorCadastro && <span>Dados invalidos</span>}
                         <ButtonSubmit>Registrar</ButtonSubmit>
             </ContainerFormulario>)}
 
@@ -62,6 +74,7 @@ const FormRegister = () => {
                         <h1>Login</h1>
                         <InputCreateAccount value = {emailLogin.value} type="Email" name = "email" placeholder="Email" onChange = {({target}) => emailLogin.setValues(target.value)} />
                         <InputCreateAccount value = {passwordLogin.value} type="password" name = "password" placeholder="Password" onChange = {({target}) => passwordLogin.setValues(target.value)} />
+                        {error && <span>Login ou senha invalidos</span>}
                         <ButtonSubmit>Login</ButtonSubmit>
                         <FooterBack> Ainda nao possui cadastro ? <div onClick = {alter}>Clique aqui e crie sua conta</div> </FooterBack>
                 </ContainerFormulario>)}
