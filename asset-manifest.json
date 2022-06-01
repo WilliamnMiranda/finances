@@ -1,0 +1,10 @@
+{
+  "files": {
+    "main.js": "/finances/static/js/main.edd5304a.js",
+    "index.html": "/finances/index.html",
+    "main.edd5304a.js.map": "/finances/static/js/main.edd5304a.js.map"
+  },
+  "entrypoints": [
+    "static/js/main.edd5304a.js"
+  ]
+}
